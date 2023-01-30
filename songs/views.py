@@ -21,7 +21,7 @@ def all_songs(request):
 @api_view(['GET', 'PUT', 'DELETE'])
 def song_details(request, pk):
 
-    song = get_object_or_404(Song, pk)
+    song = get_object_or_404(Song, pk=pk)
 
     if request.method == 'GET':
         serializer = SongSerializer(song)
